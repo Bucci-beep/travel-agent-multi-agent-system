@@ -28,3 +28,27 @@ Building robust GenAI applications requires treating LLMs as volatile components
 ```bash
 git clone [https://github.com/yourusername/safiri-ai-travel.git](https://github.com/yourusername/safiri-ai-travel.git)
 cd safiri-ai-travel
+**2. Create a virtual environment**
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+
+**3. Install dependencies**
+pip install -r requirements.txt
+
+**4. Configure Environment variables**
+GROQ_API_KEY="your_groq_api_key"
+WEATHER_API_KEY="your_openweathermap_api_key"
+
+**5. Add the unicode Font**
+Ensure DejaVuSans.ttf is present in the root directory for PDF generation to work correctly.
+
+**6. Run the application**
+streamlit run app.py
+
+🔄 Agentic Workflow
+Phase 1 (Parallel): * Research Agent: Scours for hidden gems and specific hotel recommendations.
+Culture Agent: Extracts phonetic greetings and local customs.
+Weather API: Fetches deterministic live weather data.
+Phase 2 (Sequential): * Activity Agent: Ingests Phase 1 data to build a day-by-day itinerary constrained by the live weather.
+Budget Agent: Calculates costs, flights, and visa fees based on the departure city and user nationality.
+Phase 3 (Synthesis): * Final Assistant: Compiles the raw data pipeline into a highly readable, 700-word markdown structure.
